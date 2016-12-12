@@ -1,4 +1,4 @@
-{% set version = "2.0.0" %}
+{% set version = "2.1.0" %}
 {% set gh_org = "Anaconda-Platform" %}
 {% set gh_repo = "nb_conda" %}
 
@@ -9,7 +9,7 @@ package:
 source:
   fn: {{ gh_repo }}-{{ version }}.tar.gz
   url: https://github.com/{{ gh_org }}/{{ gh_repo }}/archive/{{ version }}.tar.gz
-  sha256: 21239dd3a0b563d5a8eccb5904edf8e8e561b90f513f8d8a1f7cf235e4db031a
+  sha256: e89a1f50aecba60a0066c844ab54de09e93da44e35bbc0c80a3ff8d822937d74
 
 build:
   number: 0
