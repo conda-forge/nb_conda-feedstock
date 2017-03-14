@@ -39,6 +39,12 @@ test:
     - python
     - requests
     - mock  # [py2k]
+  source_files:
+    - package.json
+    - requirements.txt
+    - setup.cfg
+    - setup.py
+    - nb_conda
   imports:
     - nb_conda
 

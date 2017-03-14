@@ -1,6 +1,5 @@
 @echo on
 :: seems to find _build, still
-cd /D "%SRC_DIR%"
 
 :: yeah, this is really dirty. but we're testing lots of conda...
 conda clean --lock || EXIT /B 1
