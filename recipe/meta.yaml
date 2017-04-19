@@ -1,4 +1,4 @@
-{% set version = "2.1.0" %}
+{% set version = "2.2.0" %}
 {% set gh_org = "Anaconda-Platform" %}
 {% set gh_repo = "nb_conda" %}
 
@@ -9,7 +9,7 @@ package:
 source:
   fn: {{ gh_repo }}-{{ version }}.tar.gz
   url: https://github.com/{{ gh_org }}/{{ gh_repo }}/archive/{{ version }}.tar.gz
-  sha256: 428522554264490f55d0e7aa95db66057bf3161b42121bcd168034579dba6e4e
+  sha256: a70a3b1cfcfc7542f60334b1567dc4ffd96d6fe0ecb61f61d055092ac33f3b5b
 
 build:
   number: 0
@@ -21,11 +21,11 @@ requirements:
   build:
     - python
     - setuptools
-    - notebook >=4.2.0
+    - notebook >=4.3.1
 
   run:
     - python
-    - notebook >=4.2.0
+    - notebook >=4.3.1
     - nb_conda_kernels >=2.0.0
 
 test:
