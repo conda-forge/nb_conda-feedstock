@@ -117,4 +117,5 @@ Feedstock Maintainers
 * [@bollwyvl](https://github.com/bollwyvl/)
 * [@damianavila](https://github.com/damianavila/)
 * [@fjcapdevila](https://github.com/fjcapdevila/)
+* [@xylar](https://github.com/xylar/)
 
