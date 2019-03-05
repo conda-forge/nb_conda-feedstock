@@ -35,6 +35,8 @@ test:
 about:
   home: https://github.com/{{ gh_org }}/{{ gh_repo }}
   license: BSD-3-Clause
+  license_family: BSD
+  license_file: LICENSE
   summary: Conda environment and package access extension from within Jupyter
 
 extra:
