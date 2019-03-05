@@ -12,7 +12,7 @@ source:
   sha256: ea202c17c85b0a1059698ba0b1005c5382ad1340bb6b6ffa464ed0e3781a923b
 
 build:
-  number: 0
+  number: 1
   script:
     - python setup.py install --single-version-externally-managed --record=record.txt
     - jupyter nbextension install nb_conda --py --sys-prefix --overwrite
@@ -42,3 +42,4 @@ extra:
     - bollwyvl
     - damianavila
     - fjcapdevila
+    - xylar
