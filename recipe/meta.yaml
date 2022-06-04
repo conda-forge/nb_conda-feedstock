@@ -13,14 +13,12 @@ source:
 
 build:
   number: 6
+  noarch: python
   script:
     - "{{ PYTHON }} -m pip install . --no-deps -vv"
     - jupyter nbextension install nb_conda --py --sys-prefix --overwrite
 
 requirements:
-  build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
     - python
     - setuptools
@@ -31,6 +29,8 @@ requirements:
     - python
     - notebook >=4.3.1
     - nb_conda_kernels >=2.0.0
+    - __unix  # [unix]
+    - __win   # [win]
 
 test:
   imports:
