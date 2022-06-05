@@ -1,5 +1,5 @@
-# build_platform:
-#   osx_arm64: osx_64
+build_platform:
+  osx_arm64: osx_64
 conda_forge_output_validation: true
 github:
   branch_name: main
@@ -7,3 +7,6 @@ github:
 provider:
   win: azure
 test_on_native_only: true
+noarch_platforms:
+  - linux_64
+  - win_64

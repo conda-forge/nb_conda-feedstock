@@ -1,36 +1,38 @@
 {% set version = "2.2.1" %}
 {% set gh_org = "Anaconda-Platform" %}
 {% set gh_repo = "nb_conda" %}
+{% set build_num = 6 %}
 
 package:
   name: {{ gh_repo }}
   version: {{ version }}
 
 source:
-  fn: {{ gh_repo }}-{{ version }}.tar.gz
   url: https://github.com/{{ gh_org }}/{{ gh_repo }}/archive/{{ version }}.tar.gz
   sha256: ea202c17c85b0a1059698ba0b1005c5382ad1340bb6b6ffa464ed0e3781a923b
 
 build:
-  number: 5
+  number: {{ build_num }}
+  string: unix_{{ build_num }}  # [unix]
+  string: win_{{ build_num }}   # [win]
+  noarch: python
   script:
     - "{{ PYTHON }} -m pip install . --no-deps -vv"
     - jupyter nbextension install nb_conda --py --sys-prefix --overwrite
 
 requirements:
-  build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
-    - python
+    - python >=3.7
     - setuptools
     - pip
     - notebook >=4.3.1
 
   run:
-    - python
+    - python >=3.7
     - notebook >=4.3.1
     - nb_conda_kernels >=2.0.0
+    - __unix  # [unix]
+    - __win   # [win]
 
 test:
   imports:
