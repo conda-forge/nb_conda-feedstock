@@ -1,7 +1,6 @@
 {% set version = "2.2.1" %}
 {% set gh_org = "Anaconda-Platform" %}
 {% set gh_repo = "nb_conda" %}
-{% set build_num = 7 %}
 
 package:
   name: {{ gh_repo }}
@@ -12,9 +11,7 @@ source:
   sha256: ea202c17c85b0a1059698ba0b1005c5382ad1340bb6b6ffa464ed0e3781a923b
 
 build:
-  number: {{ build_num }}
-  string: unix_{{ build_num }}  # [unix]
-  string: win_{{ build_num }}   # [win]
+  number: 7
   noarch: python
   script:
     - "{{ PYTHON }} -m pip install . --no-deps -vv"
@@ -22,19 +19,22 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - setuptools
     - pip
     - notebook >=4.3.1,<7.0.0
 
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - notebook >=4.3.1,<7.0.0
     - nb_conda_kernels >=2.0.0
+    - setuptools
     - __unix  # [unix]
     - __win   # [win]
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - nb_conda
 
