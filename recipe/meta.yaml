@@ -1,7 +1,6 @@
 {% set version = "2.2.1" %}
 {% set gh_org = "Anaconda-Platform" %}
 {% set gh_repo = "nb_conda" %}
-{% set build_num = 7 %}
 
 package:
   name: {{ gh_repo }}
@@ -12,9 +11,7 @@ source:
   sha256: ea202c17c85b0a1059698ba0b1005c5382ad1340bb6b6ffa464ed0e3781a923b
 
 build:
-  number: {{ build_num }}
-  string: unix_{{ build_num }}  # [unix]
-  string: win_{{ build_num }}   # [win]
+  number: 7
   noarch: python
   script:
     - "{{ PYTHON }} -m pip install . --no-deps -vv"
